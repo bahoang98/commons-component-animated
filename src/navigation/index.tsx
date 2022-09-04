@@ -6,6 +6,9 @@ import {
   HomeScreen,
   FloatButtonScreen,
   ReactionEmojiScreen,
+  BubbleButton,
+  ScrollStoryInstagram,
+  NumberAnimation,
 } from '@/screens';
 
 export type RootStackParamList = {
@@ -13,6 +16,9 @@ export type RootStackParamList = {
   SwitchCustomScreen: undefined;
   FloatButtonScreen: undefined;
   ReactionEmojiScreen: undefined;
+  BubbleButton: undefined;
+  ScrollStoryInstagram: undefined;
+  NumberAnimation: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -31,6 +37,12 @@ export const MainNavigation = () => {
           name="ReactionEmojiScreen"
           component={ReactionEmojiScreen}
         />
+        <Stack.Screen name="BubbleButton" component={BubbleButton} />
+        <Stack.Screen
+          name="ScrollStoryInstagram"
+          component={ScrollStoryInstagram}
+        />
+        <Stack.Screen name="NumberAnimation" component={NumberAnimation} />
       </Stack.Navigator>
     </NavigationContainer>
   );

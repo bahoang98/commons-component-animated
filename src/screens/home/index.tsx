@@ -33,6 +33,18 @@ const LIST_SCREEN = [
     name: 'ReactionEmojiScreen',
     display: 'Reaction Emoji',
   },
+  {
+    name: 'BubbleButton',
+    display: 'Bubble Button',
+  },
+  {
+    name: 'ScrollStoryInstagram',
+    display: 'Scroll Story Instagram',
+  },
+  {
+    name: 'NumberAnimation',
+    display: 'Number Animation',
+  },
 ];
 
 const HomeScreen = ({ navigation }: Props) => {

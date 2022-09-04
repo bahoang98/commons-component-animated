@@ -9,8 +9,17 @@ type PropsItem = {
   element: JSX.Element;
 };
 
+const randomEmoji = () => {
+  const number = Math.random() * 2 - 1;
+  if (number > 0) {
+    return '😈';
+  }
+  return '❤️';
+};
+
 const ReactionEmojiScreen = ({}: Props) => {
   const [list, setList] = useState<PropsItem[]>([]);
+  const emoji = randomEmoji();
   const onClick = () => {
     setList([
       ...list,
@@ -23,6 +32,7 @@ const ReactionEmojiScreen = ({}: Props) => {
             callback={(index: string) => {
               console.log(index);
             }}
+            emoji={emoji}
           />
         ),
       },
@@ -30,14 +40,9 @@ const ReactionEmojiScreen = ({}: Props) => {
   };
   return (
     <View style={styles.container}>
-      {/* <View style={styles.base}>
-        <TouchableOpacity style={styles.baseBtn} onPress={onClick}>
-          <Text>Click me!!</Text>
-        </TouchableOpacity>
-      </View> */}
       <View style={styles.base}>
         <TouchableOpacity style={styles.baseBtn} onPress={onClick}>
-          <Text>♥️</Text>
+          <Text>{emoji}</Text>
         </TouchableOpacity>
         {list.map(item => item.element)}
       </View>

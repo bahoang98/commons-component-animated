@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -7,15 +7,15 @@ import Animated, {
   withTiming,
   Easing,
 } from 'react-native-reanimated';
-import { ButtonComponent } from './button';
+import { ButtonComponent, PropsButtonComponent } from './button';
 
 type Props = {
   name: string;
   rotateZ: number;
   isVisible: boolean;
-};
+} & PropsButtonComponent;
 
-const ButtonChild = ({ name, rotateZ, isVisible }: Props) => {
+const ButtonChild = ({ name, rotateZ, isVisible, ...props }: Props) => {
   const animatedTranslateY = useSharedValue(0);
 
   const animatedStyle = useAnimatedStyle(() => {
@@ -50,7 +50,7 @@ const ButtonChild = ({ name, rotateZ, isVisible }: Props) => {
 
   return (
     <Animated.View style={[styles.baseBtn, animatedStyle]}>
-      <ButtonComponent label={name} />
+      <ButtonComponent label={name} {...props} />
     </Animated.View>
   );
 };

@@ -12,6 +12,7 @@ import Animated, {
 type Props = {
   callback?: (index: string) => void;
   index: string;
+  emoji?: string;
 };
 const { height: HEIGHT } = Dimensions.get('window');
 const height = HEIGHT - 200;
@@ -22,7 +23,7 @@ const randomNumber = () => {
   return value;
 };
 
-const ItemEmoji = ({ callback = () => {}, index }: Props) => {
+const ItemEmoji = ({ callback = () => {}, index, emoji }: Props) => {
   const [isDone, setIsDone] = useState(false);
   const animatedTranslateY = useSharedValue(-30);
   const translateXValue1 = randomNumber();
@@ -99,7 +100,7 @@ const ItemEmoji = ({ callback = () => {}, index }: Props) => {
 
   return (
     <Animated.View style={[styles.container, animatedStyles]} key={index}>
-      <Text>♥️</Text>
+      <Text>{emoji || '♥️'}</Text>
     </Animated.View>
   );
 };

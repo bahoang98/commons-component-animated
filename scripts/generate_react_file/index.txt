@@ -1,0 +1,15 @@
+import React from 'react';
+import { View, Text } from 'react-native';
+import { Props } from './types';
+import { useStyles } from './styles';
+
+const index = ({}: Props) => {
+  const { styles } = useStyles();
+  return (
+    <View style={styles.container}>
+      <Text>index</Text>
+    </View>
+  );
+};
+
+export { index };

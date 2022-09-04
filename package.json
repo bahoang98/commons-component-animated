@@ -8,7 +8,8 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "postinstall": "npx pod-install ios"
+    "postinstall": "npx pod-install ios",
+    "generate:file": "sh ./scripts/generate_react_file/make_file.sh"
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.11",

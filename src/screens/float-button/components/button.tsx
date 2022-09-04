@@ -8,12 +8,12 @@ import {
   TouchableOpacityProps,
 } from 'react-native';
 
-type Props = {
+export type PropsButtonComponent = {
   style?: ViewStyle;
   label?: string;
 } & TouchableOpacityProps;
 
-const ButtonComponent = ({ style, label, ...props }: Props) => {
+const ButtonComponent = ({ style, label, ...props }: PropsButtonComponent) => {
   return (
     <TouchableOpacity style={[styles.base, style]} {...props}>
       <Text>{label || 'root'}</Text>

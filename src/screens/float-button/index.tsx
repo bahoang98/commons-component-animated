@@ -48,7 +48,14 @@ const FloatButtonScreen = ({}: Props) => {
   };
 
   const renderItem = ({ name, rotateZ }: { name: string; rotateZ: number }) => {
-    return <ButtonChild name={name} rotateZ={rotateZ} isVisible={isVisible} />;
+    return (
+      <ButtonChild
+        name={name}
+        rotateZ={rotateZ}
+        isVisible={isVisible}
+        onPress={onOpen}
+      />
+    );
   };
 
   return (
